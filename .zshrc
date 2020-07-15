@@ -4,7 +4,7 @@ export GEM_HOME=~/.gem
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/grep/libexec/gnubin:/usr/local/opt/findutils/libexec/gnubin:/usr/local/opt/node@8/bin:~/Library/Python/3.7/bin:~/.local/bin:~/code/scripts:~/code/PLC/tools/report_processing_utilities:$GEM_HOME/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/wdeberry/.oh-my-zsh
+export ZSH=/Users/$USER/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
