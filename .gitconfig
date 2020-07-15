@@ -1,6 +1,6 @@
 [user]
     name = Will DeBerry
-	email = wdeberry@getwellnetwork.com
+    email = willdeberry@gmail.com
 [color]
     ui = auto
 [merge]
@@ -10,11 +10,6 @@
     autocrlf = input
     ignorecase = false
     pager = less -F -X
-[github]
-    user = hillbillyhacker86
-    token = aadb096af8d7ecb79bd21ac6c5d8cc14
-[review "gerrit.sudoservers.com"]
-    username = hillbillyhacker86
 [alias]
     lg = log --oneline --graph --decorate
     ca = commit -a
@@ -24,14 +19,7 @@
     co = checkout
     st = status
     mt = mergetool
-[review "gerrit.aokp.co"]
-    username = hillbillyhacker86
-    email = hillbillyhacker86@gmail.com
 [push]
     default = simple
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-[pull]
+[branch]
+    autosetuprebase = always
