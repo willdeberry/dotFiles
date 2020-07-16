@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export GEM_HOME=~/.gem
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/grep/libexec/gnubin:/usr/local/opt/findutils/libexec/gnubin:/usr/local/opt/node@8/bin:~/Library/Python/3.7/bin:~/.local/bin:~/code/scripts:~/code/PLC/tools/report_processing_utilities:$GEM_HOME/bin:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/grep/libexec/gnubin:/usr/local/opt/findutils/libexec/gnubin:/usr/local/opt/node@8/bin:/usr/local/opt/python@3/bin:~/.local/bin:~/code/scripts:~/code/PLC/tools/report_processing_utilities:$GEM_HOME/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/$USER/.oh-my-zsh
