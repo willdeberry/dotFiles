@@ -64,6 +64,7 @@ plugins=(
   gitfast
   colored-man-pages
   zsh-completions
+  yadm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -87,9 +88,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 export EDITOR='vim'
 export VISUAL=vim
-export DANGER_GITLAB_HOST=git.internal.getwellnetwork.com
-export DANGER_GITLAB_API_BASE_URL=https://git.internal.getwellnetwork.com/api/v4
-export DANGER_GITLAB_API_TOKEN=q56npZZCHXJBnusKK7-s
 
 zstyle ':completion:*' special-dirs true
 
