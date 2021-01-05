@@ -13,5 +13,5 @@ alias update='sudo apt update && sudo apt dist-upgrade'
 alias clean='rm -f *.xz *.deb *.dsc *.changes *.build *.gz'
 alias dc='docker-compose'
 alias dgc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc:ro spotify/docker-gc'
-alias tmuxa='tmux attach-session -t Admin'
+alias tmuxa='tmux new-session -A -s Admin'
 
