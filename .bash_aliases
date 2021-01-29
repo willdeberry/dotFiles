@@ -13,6 +13,7 @@ alias update='sudo apt update && sudo apt dist-upgrade && sudo apt autoremove'
 alias clean='rm -f *.xz *.deb *.dsc *.changes *.build *.gz'
 alias dc='docker-compose'
 alias dgc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc:ro spotify/docker-gc'
+alias dcu='dc pull && dc up -d'
 alias tmuxa='tmux new-session -A -s Admin -n bartender'
 alias motd='cat /run/motd.dynamic'
 
