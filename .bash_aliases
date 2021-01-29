@@ -16,4 +16,6 @@ alias dgc='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:
 alias dcu='dc pull && dc up -d'
 alias tmuxa='tmux new-session -A -s Admin -n bartender'
 alias motd='cat /run/motd.dynamic'
-
+alias yp='yadm push'
+alias yl='yadm pull'
+alias ym='yadm'
