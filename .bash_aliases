@@ -8,6 +8,7 @@ _xfunc git __git_complete gl _git_pull
 alias gp='git push'
 alias gpt='git push --tags'
 alias gl='git pull'
+alias gb='git branch'
 alias vim='vim -p'
 alias update='sudo apt update && sudo apt dist-upgrade && sudo apt autoremove'
 alias clean='rm -f *.xz *.deb *.dsc *.changes *.build *.gz'
