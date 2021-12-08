@@ -15,6 +15,14 @@ function update_system() {
     fi
 }
 
+function tv() {
+    if [[ ! -d "../../../../videos/TV/${1}" ]]; then
+        echo "${1} directory not found in TV section"
+    fi
+
+    rsync -avP *.mkv "../../../../videos/TV/${1}"
+}
+
 alias gp='git push'
 alias gpt='git push --tags'
 alias gl='git pull'
