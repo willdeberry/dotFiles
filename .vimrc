@@ -16,6 +16,7 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set listchars+=trail:.
 set listchars+=extends:>
 set listchars+=precedes:<
+autocmd FileType yaml setlocal ts=2 sw=2 expandtab
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 autocmd BufNewFile,BufRead *.ts set syntax=javascript
 
