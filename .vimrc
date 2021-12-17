@@ -10,13 +10,14 @@ set smartindent                 " indent things for me
 set shiftround                  " indenting when at column 3 will go to column 4, not 7
 set autoindent                  " indent at the same level of the previous line
 set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
+set ruler                       " show the line/column breakdown in the bottom right
 set list
 set listchars=""
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set listchars+=trail:.
 set listchars+=extends:>
 set listchars+=precedes:<
-autocmd FileType yaml setlocal ts=2 sw=2 expandtab
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 autocmd BufNewFile,BufRead *.ts set syntax=javascript
 
@@ -94,3 +95,6 @@ function! InitializeDirectories()
 endfunction
 call InitializeDirectories()
 
+" Ale Plugin Options -------------------------
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
