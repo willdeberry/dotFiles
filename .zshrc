@@ -1,7 +1,12 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export GEM_HOME=~/.gem
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/grep/libexec/gnubin:/usr/local/opt/findutils/libexec/gnubin:/usr/local/opt/node@8/bin:/usr/local/opt/python@3/bin:~/.local/bin:~/code/scripts:~/code/PLC/tools/report_processing_utilities:$GEM_HOME/bin:$PATH
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/coreutils/libexec/gnubin:~/code/scripts:$GEM_HOME/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/$USER/.oh-my-zsh
@@ -61,10 +66,11 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  gitfast
   colored-man-pages
-  zsh-completions
+  gitfast
+  terraform
   yadm
+  zsh-completions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -88,8 +94,12 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 export EDITOR='vim'
 export VISUAL=vim
+export AWS_PAGER=""
 
 zstyle ':completion:*' special-dirs true
+
+# disable confirmation of history expansion eg: use of !$
+unsetopt HIST_VERIFY
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -113,3 +123,9 @@ alias vim='vim -p'
 alias clean='rm -f *.xz *.deb *.dsc *.changes *.build *.gz'
 alias web='python3 -m http.server'
 alias home='ssh home'
+
+# Stelligent
+alias aws-labs="aws-vault exec labs -- aws"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
