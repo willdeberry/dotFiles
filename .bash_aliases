@@ -20,7 +20,7 @@ function tv() {
         echo "${1} directory not found in TV section"
     fi
 
-    rsync -avP *.mkv "../../../../videos/TV/${1}"
+    rsync -avP --exclude=*sample* *.mkv "../../../../videos/TV/${1}"
 }
 
 alias gp='git push'
