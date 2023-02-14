@@ -2,14 +2,19 @@
     name = Will DeBerry
     email = willdeberry@gmail.com
 [color]
-    ui = auto
+    ui = always
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 [merge]
     tool = emerge
 [core]
     editor = vim
     autocrlf = input
     ignorecase = false
-    pager = less -F -X
+    pager = /usr/share/git-core/contrib/diff-highlight | less -F -X
 [alias]
     lg = log --oneline --graph --decorate
     ca = commit -a
