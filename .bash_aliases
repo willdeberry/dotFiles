@@ -1,14 +1,28 @@
 export EDITOR=vim
 export VISUAL=vim
-export PATH="~/node_modules/@angular/cli/bin:$PATH"
+export PATH="~/node_modules/@angular/cli/bin:~/code/scripts:$PATH"
 
 _xfunc git __git_complete gp _git_push
 _xfunc git __git_complete gl _git_pull
 
-function update_system() {
+function update_ubuntu() {
     sudo apt update
     sudo apt dist-upgrade -y
     sudo apt autoremove -y
+}
+
+function update_rhel() {
+    sudo dnf upgrade -y
+}
+
+function update_system() {
+    if command -v apt $>/dev/null; then
+        update_ubuntu
+    fi
+
+    if command -v dnf $>/dev/null; then
+        update_rhel
+    fi
 
     if command -v needrestart $>/dev/null; then
         sudo needrestart
@@ -41,3 +55,4 @@ alias yl='yadm pull'
 alias ym='yadm'
 alias movie='rsync -avP *.mkv ../../../../videos/Movies/.'
 alias kid='rsync -avP *.mkv ../../../../videos/Kids/.'
+alias rclone='rclone --client-cert ~/.config/rclone/IDTEC.crt --client-key ~/.config/rclone/IDTEC.key --no-check-certificate=true'
