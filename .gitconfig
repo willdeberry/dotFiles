@@ -14,7 +14,7 @@
     editor = vim
     autocrlf = input
     ignorecase = false
-    pager = /usr/share/git-core/contrib/diff-highlight | less -F -X
+    pager = /usr/local/bin/diff-highlight | less -F -X
 [alias]
     lg = log --oneline --graph --decorate
     ca = commit -a
