@@ -24,7 +24,11 @@
     co = checkout
     st = status
     mt = mergetool
+    recent = branch -r --sort=-committerdate --format="%(committerdate)%09%(refname:short)"
 [push]
     default = simple
+    autoSetupRemote = true
 [branch]
     autosetuprebase = always
+[fetch]
+    prune = true
