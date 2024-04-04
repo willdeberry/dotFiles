@@ -6,7 +6,7 @@ export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
-export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/coreutils/libexec/gnubin:~/code/scripts:$GEM_HOME/bin:$PATH
+export PATH=~/.cargo/bin:/opt/homebrew/opt/gnupg@2.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/coreutils/libexec/gnubin:~/code/scripts:$GEM_HOME/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/$USER/.oh-my-zsh
@@ -119,13 +119,34 @@ alias gp='git push'
 alias gpt='git push --tags'
 alias gl='git pull'
 alias gb='git branch'
+alias gbr='git for-each-ref --format "%(refname:short)" refs/heads | grep -vw "master\|main\|prod" | xargs git branch -D'
 alias vim='vim -p'
 alias clean='rm -f *.xz *.deb *.dsc *.changes *.build *.gz'
 alias web='python3 -m http.server'
 alias home='ssh home'
+alias aws-admin="aws-vault exec admin -- aws"
+alias ls="ls --color=auto"
 
-# Stelligent
-alias aws-labs="aws-vault exec labs -- aws"
+#IDTec
+alias rclone='rclone --client-cert ~/.config/rclone/IDTEC.crt --client-key ~/.config/rclone/IDTEC.key --no-check-certificate=true --multi-thread-streams 8'
+
+function bfmt() {
+    local dest
+
+    dest="${1}"
+
+    find "${dest}" -not -path '*/\.*' -type f -exec grep -IRl '#\!\(/usr/bin/env bash\|/bin/bash\)' {} \+ |
+        xargs shfmt -i 4 -ci -w
+}
+
+function bcheck() {
+    local dest
+
+    dest="${1}"
+
+    find "${dest}" -not -path '*/\.*' -type f -exec grep -IRl '#\!\(/usr/bin/env bash\|/bin/bash\)' {} \+ |
+        xargs shellcheck -x
+}
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
