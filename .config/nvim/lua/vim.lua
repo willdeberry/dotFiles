@@ -25,4 +25,3 @@ vim.opt.undofile = true
 vim.cmd([[ 
     highlight PmenuSel ctermbg=3 ctermfg=0
 ]])
-vim.api.nvim_set_keymap('i', '<CR>', [[ pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>" ]], { noremap = true, expr = true })
