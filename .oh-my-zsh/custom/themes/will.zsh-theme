@@ -260,7 +260,6 @@ build_prompt() {
   prompt_status
   prompt_virtualenv
   prompt_aws
-  prompt_context
   prompt_dir
   prompt_git
   prompt_bzr
