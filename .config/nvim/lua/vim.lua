@@ -6,6 +6,7 @@ vim.opt.colorcolumn = '120'
 vim.opt.cursorline = true
 vim.opt.lazyredraw = true
 vim.opt.showtabline = 2
+vim.g.loaded_matchparen = true
 
 -- Whitespace
 vim.opt.tabstop = 4
@@ -22,6 +23,11 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 -- Vim Native Autocomplete
-vim.cmd([[ 
+vim.cmd([[
     highlight PmenuSel ctermbg=3 ctermfg=0
 ]])
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = { "*" },
+    command = [[%s/\s\+$//e]],
+})

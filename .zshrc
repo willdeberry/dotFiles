@@ -6,7 +6,7 @@ export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
-export PATH=~/.cargo/bin:/opt/homebrew/opt/gnupg@2.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/coreutils/libexec/gnubin:~/code/scripts:$GEM_HOME/bin:$PATH
+export PATH=~/.cargo/bin:/opt/homebrew/opt/gnupg@2.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/coreutils/libexec/gnubin:~/code/scripts:/opt/homebrew/opt/ruby/bin:$GEM_HOME/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/$USER/.oh-my-zsh
@@ -122,7 +122,7 @@ alias gb='git branch'
 alias gbr='git for-each-ref --format "%(refname:short)" refs/heads | grep -vw "master\|main\|prod" | xargs git branch -D'
 alias nvim='nvim -p'
 alias vim='nvim -p'
-alias vi='vim -p'
+alias vi='nvim -p'
 alias clean='rm -f *.xz *.deb *.dsc *.changes *.build *.gz'
 alias web='python3 -m http.server'
 alias home='ssh home'
